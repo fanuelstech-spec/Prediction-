@@ -56,9 +56,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-800/80 bg-neutral-950/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-neutral-900 bg-black/95 backdrop-blur-md">
       {/* Marquee Odds Ticker */}
-      <div className="w-full bg-neutral-900/90 border-b border-neutral-800/60 px-4 py-1.5 text-xs text-neutral-300 overflow-hidden flex items-center justify-between">
+      <div className="w-full bg-black border-b border-neutral-900 px-4 py-1.5 text-xs text-neutral-300 overflow-hidden flex items-center justify-between">
         <div className="flex items-center gap-2 font-mono text-[11px] text-emerald-400 font-semibold shrink-0">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -108,13 +108,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
           onClick={() => onNavigate('home')}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 via-neutral-900 to-neutral-950 border border-amber-500/40 flex items-center justify-center shadow-lg shadow-amber-500/5 group-hover:border-amber-400 transition-colors">
+          <div className="w-10 h-10 rounded-xl bg-black border border-amber-500/40 flex items-center justify-center shadow-lg shadow-amber-500/5 group-hover:border-amber-400 transition-colors">
             <Shield className="w-5 h-5 text-amber-400" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
               <span className="font-bold text-lg text-white tracking-tight">Apex<span className="text-amber-400">Picks</span></span>
-              <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 rounded bg-neutral-800 text-neutral-300 font-semibold border border-neutral-700">
+              <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 rounded bg-neutral-900 text-neutral-300 font-semibold border border-neutral-800">
                 PRO
               </span>
             </div>
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
             onClick={() => onNavigate('home')}
             className={`px-3 py-1.5 rounded-lg transition-colors ${
               currentView === 'home'
-                ? 'text-white bg-neutral-800/80 font-semibold'
+                ? 'text-white bg-neutral-900 font-semibold border border-neutral-800'
                 : 'hover:text-white hover:bg-neutral-900'
             }`}
           >
@@ -182,7 +182,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
             <button
               id="role-switcher-btn"
               onClick={() => setRoleMenuOpen(!roleMenuOpen)}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-xs font-medium text-neutral-300 transition-colors"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black hover:bg-neutral-900 border border-neutral-800 text-xs font-medium text-neutral-300 transition-colors"
               title="Switch demo persona to test authorization tiers"
             >
               {getBadge()}
@@ -190,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
             </button>
 
             {roleMenuOpen && (
-              <div className="absolute right-0 mt-2 w-64 rounded-xl bg-neutral-900 border border-neutral-800 shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95">
+              <div className="absolute right-0 mt-2 w-64 rounded-xl bg-black border border-neutral-800 shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95">
                 <div className="px-2.5 py-1.5 border-b border-neutral-800 mb-1">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">Test Personas</p>
                   <p className="text-[10px] text-neutral-500">Instantly experience each access level</p>
@@ -201,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
                     switchDemoRole('vip');
                     setRoleMenuOpen(false);
                   }}
-                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-800 flex items-center justify-between text-neutral-200"
+                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-900 flex items-center justify-between text-neutral-200"
                 >
                   <span className="flex items-center gap-2">
                     <Crown className="w-3.5 h-3.5 text-amber-400" /> VIP Elite (All Unlocked)
@@ -214,7 +214,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
                     switchDemoRole('standard');
                     setRoleMenuOpen(false);
                   }}
-                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-800 flex items-center justify-between text-neutral-200"
+                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-900 flex items-center justify-between text-neutral-200"
                 >
                   <span className="flex items-center gap-2">
                     <Sparkles className="w-3.5 h-3.5 text-emerald-400" /> Standard Subscriber
@@ -227,7 +227,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
                     switchDemoRole('visitor');
                     setRoleMenuOpen(false);
                   }}
-                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-800 flex items-center justify-between text-neutral-200"
+                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-900 flex items-center justify-between text-neutral-200"
                 >
                   <span className="flex items-center gap-2">
                     <Lock className="w-3.5 h-3.5 text-neutral-400" /> Free Visitor (Locked)
@@ -242,7 +242,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onOpenP
                     switchDemoRole('admin');
                     setRoleMenuOpen(false);
                   }}
-                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-800 flex items-center justify-between text-neutral-200"
+                  className="w-full text-left px-2.5 py-2 rounded-lg text-xs hover:bg-neutral-900 flex items-center justify-between text-neutral-200"
                 >
                   <span className="flex items-center gap-2">
                     <ShieldCheck className="w-3.5 h-3.5 text-red-400" /> Admin Manager

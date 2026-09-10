@@ -17,7 +17,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
   const { accessSummary } = useAuth();
 
   return (
-    <section id="pricing-section" className="py-16 md:py-24 border-b border-neutral-800/80 bg-neutral-950 relative overflow-hidden">
+    <section id="pricing-section" className="py-16 md:py-24 border-b border-neutral-900 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-4 font-mono">
@@ -38,7 +38,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
           
           {/* 1. STANDARD PASS */}
-          <div className="rounded-2xl bg-neutral-900/80 border border-neutral-800 hover:border-neutral-700 p-6 sm:p-8 flex flex-col justify-between transition-all">
+          <div className="rounded-2xl bg-black border border-neutral-800 hover:border-neutral-700 p-6 sm:p-8 flex flex-col justify-between transition-all">
             <div>
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 font-mono px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30">
@@ -93,8 +93,8 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
                 }
                 className={`w-full py-3 px-4 rounded-xl font-bold text-xs tracking-wide transition-all flex items-center justify-center gap-2 ${
                   accessSummary?.isStandard && !accessSummary?.isVip
-                    ? 'bg-neutral-800 text-emerald-400 cursor-default'
-                    : 'bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700'
+                    ? 'bg-neutral-900 text-emerald-400 cursor-default border border-neutral-800'
+                    : 'bg-neutral-900 hover:bg-neutral-800 text-white border border-neutral-800'
                 }`}
               >
                 {accessSummary?.isStandard && !accessSummary?.isVip ? (
@@ -110,7 +110,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
           </div>
 
           {/* 2. VIP ELITE (FEATURED) */}
-          <div className="relative rounded-2xl bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-950 border-2 border-amber-500/60 p-6 sm:p-8 flex flex-col justify-between shadow-2xl shadow-amber-500/10 scale-[1.02]">
+          <div className="relative rounded-2xl bg-black border-2 border-amber-500/60 p-6 sm:p-8 flex flex-col justify-between shadow-2xl shadow-amber-500/10 scale-[1.02]">
             {/* Top Featured Pill */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-extrabold text-[11px] uppercase tracking-wider font-mono shadow-md shadow-amber-500/30 flex items-center gap-1">
               <Crown className="w-3 h-3 fill-neutral-950" /> Most Popular • Full Access
@@ -174,7 +174,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
                 }
                 className={`w-full py-3.5 px-4 rounded-xl font-extrabold text-xs tracking-wide transition-all shadow-lg flex items-center justify-center gap-2 ${
                   accessSummary?.isVip
-                    ? 'bg-neutral-800 text-amber-400 cursor-default'
+                    ? 'bg-neutral-900 text-amber-400 cursor-default border border-neutral-800'
                     : 'bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-neutral-950 shadow-amber-500/20'
                 }`}
               >
@@ -192,7 +192,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
           </div>
 
           {/* 3. PAY-PER-PREDICTION */}
-          <div className="rounded-2xl bg-neutral-900/80 border border-neutral-800 hover:border-neutral-700 p-6 sm:p-8 flex flex-col justify-between transition-all">
+          <div className="rounded-2xl bg-black border border-neutral-800 hover:border-neutral-700 p-6 sm:p-8 flex flex-col justify-between transition-all">
             <div>
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-400 font-mono px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30">
@@ -242,7 +242,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
                     tier: 'single',
                   })
                 }
-                className="w-full py-3 px-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs tracking-wide transition-all border border-neutral-700 flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs tracking-wide transition-all border border-neutral-800 flex items-center justify-center gap-2"
               >
                 <span>Unlock Single Ticket</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -253,7 +253,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
         </div>
 
         {/* Security / Fapshi Guarantee Banner */}
-        <div className="mt-12 p-4 rounded-xl bg-neutral-900/50 border border-neutral-800/80 max-w-3xl mx-auto flex items-center justify-center gap-4 text-xs text-neutral-400 text-center flex-wrap">
+        <div className="mt-12 p-4 rounded-xl bg-black border border-neutral-800 max-w-3xl mx-auto flex items-center justify-center gap-4 text-xs text-neutral-400 text-center flex-wrap">
           <div className="flex items-center gap-1.5 font-medium text-neutral-300">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>Fapshi Certified Secure Checkout</span>

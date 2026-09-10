@@ -88,7 +88,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
           <button
             id="refresh-dashboard-btn"
             onClick={fetchDashboardData}
-            className="p-2 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 text-xs flex items-center gap-1.5 transition-colors"
+            className="p-2 rounded-lg bg-black hover:bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs flex items-center gap-1.5 transition-colors"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
             <span className="hidden sm:inline">Refresh</span>
@@ -108,14 +108,14 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
       </div>
 
       {/* Tabs Navigation */}
-      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-neutral-800/80 mt-6 pb-2">
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-neutral-800 mt-6 pb-2">
         <button
           id="tab-overview"
           onClick={() => setActiveTab('overview')}
           className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
             activeTab === 'overview'
-              ? 'bg-neutral-800 text-white shadow-sm'
-              : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900'
+              ? 'bg-neutral-900 text-white border border-neutral-800 shadow-sm'
+              : 'text-neutral-400 hover:text-neutral-200 hover:bg-black'
           }`}
         >
           <LayoutDashboard className="w-3.5 h-3.5" />
@@ -127,8 +127,8 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
           onClick={() => setActiveTab('predictions')}
           className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
             activeTab === 'predictions'
-              ? 'bg-neutral-800 text-white shadow-sm'
-              : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900'
+              ? 'bg-neutral-900 text-white border border-neutral-800 shadow-sm'
+              : 'text-neutral-400 hover:text-neutral-200 hover:bg-black'
           }`}
         >
           <Unlock className="w-3.5 h-3.5" />
@@ -140,8 +140,8 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
           onClick={() => setActiveTab('subscriptions')}
           className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
             activeTab === 'subscriptions'
-              ? 'bg-neutral-800 text-white shadow-sm'
-              : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900'
+              ? 'bg-neutral-900 text-white border border-neutral-800 shadow-sm'
+              : 'text-neutral-400 hover:text-neutral-200 hover:bg-black'
           }`}
         >
           <Crown className="w-3.5 h-3.5" />
@@ -153,8 +153,8 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
           onClick={() => setActiveTab('payments')}
           className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
             activeTab === 'payments'
-              ? 'bg-neutral-800 text-white shadow-sm'
-              : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900'
+              ? 'bg-neutral-900 text-white border border-neutral-800 shadow-sm'
+              : 'text-neutral-400 hover:text-neutral-200 hover:bg-black'
           }`}
         >
           <CreditCard className="w-3.5 h-3.5" />
@@ -169,7 +169,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
           <div className="space-y-8">
             {/* Stat Highlights Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-5 rounded-2xl bg-neutral-900/80 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] uppercase font-mono text-neutral-400 block mb-1">Subscription Tier</span>
                 <div className="text-xl font-extrabold text-white flex items-center gap-2">
                   {accessSummary?.isVip ? (
@@ -191,7 +191,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-neutral-900/80 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] uppercase font-mono text-neutral-400 block mb-1">Unlocked Packages</span>
                 <div className="text-xl font-extrabold text-white font-mono">
                   {accessSummary?.isVip ? 'Universal (All Unlocked)' : unlockedPackages.length}
@@ -199,7 +199,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                 <p className="text-[11px] text-neutral-500 mt-1 font-mono">Real-time Entitlement Active</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-neutral-900/80 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] uppercase font-mono text-neutral-400 block mb-1">Account Status</span>
                 <div className="text-xl font-extrabold text-emerald-400 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" /> Verified
@@ -207,7 +207,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                 <p className="text-[11px] text-neutral-500 mt-1 font-mono">Role: {user?.role || 'Member'}</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-neutral-900/80 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] uppercase font-mono text-neutral-400 block mb-1">Payment Method</span>
                 <div className="text-xl font-extrabold text-white font-mono flex items-center gap-1.5">
                   <CreditCard className="w-4 h-4 text-amber-400" /> Fapshi
@@ -232,8 +232,8 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
               </div>
 
               {unlockedPackages.length === 0 ? (
-                <div className="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 text-center space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center mx-auto text-neutral-400">
+                <div className="p-8 rounded-2xl bg-black border border-neutral-800 text-center space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center mx-auto text-neutral-400">
                     <Sparkles className="w-6 h-6" />
                   </div>
                   <h4 className="text-sm font-semibold text-white">No active unlocked predictions yet</h4>
@@ -252,7 +252,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                   {unlockedPackages.slice(0, 3).map((pkg) => (
                     <div
                       key={pkg.id}
-                      className="p-5 rounded-2xl bg-neutral-900/90 border border-neutral-800 hover:border-emerald-500/40 transition-colors flex flex-col justify-between"
+                      className="p-5 rounded-2xl bg-black border border-neutral-800 hover:border-emerald-500/40 transition-colors flex flex-col justify-between"
                     >
                       <div>
                         <div className="flex items-center justify-between text-[11px] font-mono mb-2">
@@ -260,7 +260,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                           <span className="text-neutral-400">{pkg.matchCount} Matches</span>
                         </div>
                         <h4 className="text-base font-bold text-white">{pkg.title}</h4>
-                        <div className="mt-3 flex items-center justify-between p-2 rounded-lg bg-neutral-950 border border-neutral-800 font-mono text-xs">
+                        <div className="mt-3 flex items-center justify-between p-2 rounded-lg bg-black border border-neutral-800 font-mono text-xs">
                           <span className="text-neutral-400">Odds:</span>
                           <span className="text-amber-400 font-bold">{pkg.combinedOdds}</span>
                         </div>
@@ -290,7 +290,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
               All Unlocked Predictions ({unlockedPackages.length})
             </h3>
             {unlockedPackages.length === 0 ? (
-              <div className="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 text-center space-y-3">
+              <div className="p-8 rounded-2xl bg-black border border-neutral-800 text-center space-y-3">
                 <p className="text-xs text-neutral-400">You do not currently hold any active package access.</p>
                 <button
                   onClick={onUpgradeToVip}
@@ -304,7 +304,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                 {unlockedPackages.map((pkg) => (
                   <div
                     key={pkg.id}
-                    className="p-5 rounded-2xl bg-neutral-900/90 border border-neutral-800 hover:border-emerald-500/40 transition-colors flex flex-col justify-between"
+                    className="p-5 rounded-2xl bg-black border border-neutral-800 hover:border-emerald-500/40 transition-colors flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between text-[11px] font-mono mb-2">
@@ -313,7 +313,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                       </div>
                       <h4 className="text-base font-bold text-white">{pkg.title}</h4>
                       <p className="text-xs text-neutral-400 mt-1 line-clamp-2">{pkg.shortDescription}</p>
-                      <div className="mt-3 flex items-center justify-between p-2 rounded-lg bg-neutral-950 border border-neutral-800 font-mono text-xs">
+                      <div className="mt-3 flex items-center justify-between p-2 rounded-lg bg-black border border-neutral-800 font-mono text-xs">
                         <span className="text-neutral-400">Combined Odds:</span>
                         <span className="text-amber-400 font-bold">{pkg.combinedOdds}</span>
                       </div>
@@ -338,7 +338,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
         {/* SUBSCRIPTIONS TAB */}
         {activeTab === 'subscriptions' && (
           <div className="space-y-6 max-w-3xl">
-            <div className="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-4">
+            <div className="p-6 rounded-2xl bg-black border border-neutral-800 space-y-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-white">Active Subscription</h3>
@@ -353,13 +353,13 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                     Standard
                   </span>
                 ) : (
-                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-neutral-800 text-neutral-400">
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-neutral-900 border border-neutral-800 text-neutral-400">
                     Free / Pay-Per-View Only
                   </span>
                 )}
               </div>
 
-              <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 font-mono text-xs space-y-2">
+              <div className="p-4 rounded-xl bg-black border border-neutral-800 font-mono text-xs space-y-2">
                 <div className="flex justify-between">
                   <span className="text-neutral-400">Plan Rate:</span>
                   <span className="text-white font-semibold">
@@ -399,13 +399,13 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
             </h3>
 
             {paymentsList.length === 0 ? (
-              <div className="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 text-center text-xs text-neutral-400">
+              <div className="p-8 rounded-2xl bg-black border border-neutral-800 text-center text-xs text-neutral-400">
                 No payment transactions recorded on this account yet.
               </div>
             ) : (
-              <div className="overflow-x-auto rounded-2xl border border-neutral-800">
+              <div className="overflow-x-auto rounded-2xl border border-neutral-800 bg-black">
                 <table className="w-full text-left text-xs font-mono">
-                  <thead className="bg-neutral-950 text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
+                  <thead className="bg-black text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
                     <tr>
                       <th className="p-3.5">Reference</th>
                       <th className="p-3.5">Type</th>
@@ -415,9 +415,9 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ onViewPrediction, 
                       <th className="p-3.5">Date</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-neutral-800 bg-neutral-900/60">
+                  <tbody className="divide-y divide-neutral-800 bg-black">
                     {paymentsList.map((p) => (
-                      <tr key={p.id} className="hover:bg-neutral-850 transition-colors">
+                      <tr key={p.id} className="hover:bg-neutral-900 transition-colors">
                         <td className="p-3.5 text-amber-300 font-bold">{p.reference}</td>
                         <td className="p-3.5 text-neutral-300 capitalize">{p.paymentType?.replace(/_/g, ' ')}</td>
                         <td className="p-3.5 text-white font-bold">{p.amount.toLocaleString()} {p.currency}</td>

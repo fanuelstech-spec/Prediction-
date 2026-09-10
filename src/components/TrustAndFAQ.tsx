@@ -36,7 +36,7 @@ export const TrustAndFAQ: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-16 py-16 border-b border-neutral-800/80 bg-neutral-950">
+    <div className="space-y-16 py-16 border-b border-neutral-900 bg-black">
       {/* 1. HOW IT WORKS SECTION */}
       <section id="how-it-works-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -52,7 +52,7 @@ export const TrustAndFAQ: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="p-6 rounded-2xl bg-neutral-900/70 border border-neutral-800 relative">
+          <div className="p-6 rounded-2xl bg-black border border-neutral-800 relative">
             <span className="text-3xl font-extrabold text-amber-500/30 font-mono block mb-3">01</span>
             <h3 className="text-base font-bold text-white mb-2">Statistical Modeling</h3>
             <p className="text-xs text-neutral-400 leading-relaxed">
@@ -60,7 +60,7 @@ export const TrustAndFAQ: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-neutral-900/70 border border-neutral-800 relative">
+          <div className="p-6 rounded-2xl bg-black border border-neutral-800 relative">
             <span className="text-3xl font-extrabold text-amber-500/30 font-mono block mb-3">02</span>
             <h3 className="text-base font-bold text-white mb-2">Package Curation</h3>
             <p className="text-xs text-neutral-400 leading-relaxed">
@@ -68,7 +68,7 @@ export const TrustAndFAQ: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-neutral-900/70 border border-neutral-800 relative">
+          <div className="p-6 rounded-2xl bg-black border border-neutral-800 relative">
             <span className="text-3xl font-extrabold text-amber-500/30 font-mono block mb-3">03</span>
             <h3 className="text-base font-bold text-white mb-2">Instant Fapshi Unlock</h3>
             <p className="text-xs text-neutral-400 leading-relaxed">
@@ -76,7 +76,7 @@ export const TrustAndFAQ: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-neutral-900/70 border border-neutral-800 relative">
+          <div className="p-6 rounded-2xl bg-black border border-neutral-800 relative">
             <span className="text-3xl font-extrabold text-amber-500/30 font-mono block mb-3">04</span>
             <h3 className="text-base font-bold text-white mb-2">Tactical Execution</h3>
             <p className="text-xs text-neutral-400 leading-relaxed">
@@ -88,7 +88,7 @@ export const TrustAndFAQ: React.FC = () => {
 
       {/* 2. RESPONSIBLE GAMBLING & ETHICAL TRANSPARENCY NOTICE */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-950 border border-neutral-800 space-y-4">
+        <div className="p-6 sm:p-8 rounded-2xl bg-black border border-neutral-800 space-y-4">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
               <Shield className="w-5 h-5" />
@@ -134,7 +134,7 @@ export const TrustAndFAQ: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="rounded-xl bg-neutral-900/60 border border-neutral-800 overflow-hidden transition-all"
+                className="rounded-xl bg-black border border-neutral-800 overflow-hidden transition-all"
               >
                 <button
                   onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
@@ -148,7 +148,7 @@ export const TrustAndFAQ: React.FC = () => {
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-4 sm:px-5 pb-5 text-xs text-neutral-400 leading-relaxed border-t border-neutral-800/60 pt-3">
+                  <div className="px-4 sm:px-5 pb-5 text-xs text-neutral-400 leading-relaxed border-t border-neutral-800 pt-3">
                     {faq.a}
                   </div>
                 )}

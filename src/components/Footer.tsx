@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPricing }) => {
   return (
-    <footer className="bg-neutral-950 border-t border-neutral-800 text-neutral-400 text-xs">
+    <footer className="bg-black border-t border-neutral-900 text-neutral-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Col 1: Brand */}
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPricing }) => 
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-500 text-[11px] font-mono">
+        <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-500 text-[11px] font-mono">
           <p>© {new Date().getFullYear()} ApexPicks Pro Football Analytics. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span>Powered by Fapshi Gateway</span>

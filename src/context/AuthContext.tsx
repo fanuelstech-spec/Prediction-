@@ -54,52 +54,88 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
-      setFirebaseUser(fbUser);
-      if (fbUser) {
-        try {
-          const idToken = await fbUser.getIdToken();
-          setToken(idToken);
-          setDemoRole(null);
-          localStorage.removeItem('apex_demo_role');
-          await fetchUserData(idToken, null);
-        } catch (e) {
-          console.error('Failed to get idToken:', e);
-        }
+    if (!auth) {
+      if (demoRole) {
+        fetchUserData(null, demoRole);
       } else {
-        setToken(null);
-        // If not logged in via Firebase, use active demo role
-        if (demoRole) {
-          await fetchUserData(null, demoRole);
-        } else {
-          setUser(null);
-          setAccessSummary(null);
-        }
+        setUser(null);
+        setAccessSummary(null);
       }
       setLoading(false);
-    });
+      return;
+    }
 
-    return () => unsubscribe();
+    try {
+      const unsubscribe = onAuthStateChanged(
+        auth,
+        async (fbUser) => {
+          setFirebaseUser(fbUser);
+          if (fbUser) {
+            try {
+              const idToken = await fbUser.getIdToken();
+              setToken(idToken);
+              setDemoRole(null);
+              localStorage.removeItem('apex_demo_role');
+              await fetchUserData(idToken, null);
+            } catch (e) {
+              console.warn('Failed to get idToken:', e);
+            }
+          } else {
+            setToken(null);
+            // If not logged in via Firebase, use active demo role
+            if (demoRole) {
+              await fetchUserData(null, demoRole);
+            } else {
+              setUser(null);
+              setAccessSummary(null);
+            }
+          }
+          setLoading(false);
+        },
+        (error) => {
+          console.warn('Auth state observation warning:', error);
+          if (demoRole) {
+            fetchUserData(null, demoRole);
+          }
+          setLoading(false);
+        }
+      );
+
+      return () => unsubscribe();
+    } catch (err) {
+      console.warn('Failed to initialize onAuthStateChanged:', err);
+      if (demoRole) {
+        fetchUserData(null, demoRole);
+      }
+      setLoading(false);
+    }
   }, [demoRole]);
 
   const switchDemoRole = async (role: 'visitor' | 'standard' | 'vip' | 'admin') => {
     setLoading(true);
     setDemoRole(role);
     localStorage.setItem('apex_demo_role', role);
-    if (firebaseUser) {
-      await fbSignOut(auth);
+    if (firebaseUser && auth) {
+      try {
+        await fbSignOut(auth);
+      } catch (err) {
+        console.warn('Sign out warning:', err);
+      }
     }
     await fetchUserData(null, role);
     setLoading(false);
   };
 
   const signInWithGoogle = async () => {
+    if (!auth || !googleAuthProvider) {
+      alert('Firebase Google Sign-In is awaiting configuration of VITE_FIREBASE_API_KEY. In the meantime, you can explore all features using the persona selector (VIP, Admin, Standard, Visitor) at the top of the page.');
+      return;
+    }
     try {
       setLoading(true);
       await signInWithPopup(auth, googleAuthProvider);
     } catch (err: any) {
-      console.error('Google sign in error:', err);
-      throw err;
+      console.warn('Google sign in canceled or failed:', err);
     } finally {
       setLoading(false);
     }
@@ -108,7 +144,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signOut = async () => {
     setLoading(true);
     try {
-      if (firebaseUser) {
+      if (firebaseUser && auth) {
         await fbSignOut(auth);
       }
       setDemoRole('visitor');
@@ -116,6 +152,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(null);
       setAccessSummary(null);
       setToken(null);
+    } catch (err) {
+      console.warn('Sign out warning:', err);
     } finally {
       setLoading(false);
     }

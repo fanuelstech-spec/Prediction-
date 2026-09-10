@@ -130,7 +130,7 @@ function MainContent() {
   });
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-amber-500 selection:text-neutral-950">
+    <div className="min-h-screen bg-black text-neutral-100 flex flex-col font-sans selection:bg-amber-500 selection:text-neutral-950">
       {/* Navigation */}
       <Navbar
         currentView={currentView}
@@ -139,9 +139,9 @@ function MainContent() {
       />
 
       {/* Main Views */}
-      <main className="flex-1">
+      <main className="flex-1 bg-black">
         {currentView === 'home' && (
-          <div>
+          <div className="bg-black">
             {/* Hero Section */}
             <Hero
               onViewPredictions={() => {
@@ -151,12 +151,12 @@ function MainContent() {
             />
 
             {/* PREDICTIONS CATALOG SECTION */}
-            <section id="predictions-grid-section" className="py-16 border-b border-neutral-800/80 bg-neutral-950">
+            <section id="predictions-grid-section" className="py-16 border-b border-neutral-900 bg-black">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Title & Description */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
                   <div>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs text-neutral-400 font-mono mb-2">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black border border-neutral-800 text-xs text-neutral-400 font-mono mb-2">
                       <Flame className="w-3.5 h-3.5 text-amber-400" /> Curated Match Packages
                     </div>
                     <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -169,7 +169,7 @@ function MainContent() {
 
                   <button
                     onClick={fetchPackages}
-                    className="self-start md:self-auto p-2 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 text-xs font-mono flex items-center gap-1.5 transition-colors"
+                    className="self-start md:self-auto p-2 rounded-xl bg-black hover:bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs font-mono flex items-center gap-1.5 transition-colors"
                   >
                     <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
                     <span>Sync Predictions</span>
@@ -177,7 +177,7 @@ function MainContent() {
                 </div>
 
                 {/* Filters & Search Toolbar */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-2 rounded-2xl bg-neutral-900/80 border border-neutral-800 mb-8 backdrop-blur-md">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-2 rounded-2xl bg-black border border-neutral-800 mb-8 backdrop-blur-md">
                   {/* Category Filter Tabs */}
                   <div className="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto no-scrollbar font-mono text-xs">
                     <button
@@ -185,8 +185,8 @@ function MainContent() {
                       onClick={() => setFilterTab('all')}
                       className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap ${
                         filterTab === 'all'
-                          ? 'bg-neutral-800 text-white font-bold shadow-sm'
-                          : 'text-neutral-400 hover:text-white hover:bg-neutral-850'
+                          ? 'bg-neutral-900 text-white font-bold border border-neutral-700 shadow-sm'
+                          : 'text-neutral-400 hover:text-white hover:bg-neutral-950'
                       }`}
                     >
                       All Packs ({packages.length})
@@ -197,7 +197,7 @@ function MainContent() {
                       className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap flex items-center gap-1.5 ${
                         filterTab === 'standard'
                           ? 'bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40'
-                          : 'text-neutral-400 hover:text-white hover:bg-neutral-850'
+                          : 'text-neutral-400 hover:text-white hover:bg-neutral-950'
                       }`}
                     >
                       <Sparkles className="w-3.5 h-3.5 text-emerald-400" /> Standard Multi
@@ -208,7 +208,7 @@ function MainContent() {
                       className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap flex items-center gap-1.5 ${
                         filterTab === 'vip'
                           ? 'bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40'
-                          : 'text-amber-400/80 hover:text-amber-300 hover:bg-neutral-850'
+                          : 'text-amber-400/80 hover:text-amber-300 hover:bg-neutral-950'
                       }`}
                     >
                       <Crown className="w-3.5 h-3.5 text-amber-400" /> VIP Elite
@@ -219,7 +219,7 @@ function MainContent() {
                       className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap ${
                         filterTab === 'pay_per_view'
                           ? 'bg-purple-500/20 text-purple-300 font-bold border border-purple-500/40'
-                          : 'text-neutral-400 hover:text-white hover:bg-neutral-850'
+                          : 'text-neutral-400 hover:text-white hover:bg-neutral-950'
                       }`}
                     >
                       Single Tickets
@@ -234,7 +234,7 @@ function MainContent() {
                       placeholder="Search leagues, odds..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-neutral-950/80 border border-neutral-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-amber-500 transition-colors font-mono"
+                      className="w-full bg-black border border-neutral-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-amber-500 transition-colors font-mono"
                     />
                   </div>
                 </div>
@@ -246,7 +246,7 @@ function MainContent() {
                     <p className="text-xs text-neutral-400 font-mono">Loading curated packages from Cloud SQL...</p>
                   </div>
                 ) : filteredPackages.length === 0 ? (
-                  <div className="py-16 text-center rounded-2xl bg-neutral-900/40 border border-neutral-800 p-8 space-y-3">
+                  <div className="py-16 text-center rounded-2xl bg-black border border-neutral-800 p-8 space-y-3">
                     <p className="text-sm font-semibold text-white">No prediction packages match your filter.</p>
                     <p className="text-xs text-neutral-500">Try adjusting your search query or switching tabs.</p>
                     <button
@@ -254,7 +254,7 @@ function MainContent() {
                         setFilterTab('all');
                         setSearchQuery('');
                       }}
-                      className="px-4 py-2 rounded-xl bg-neutral-800 text-neutral-300 text-xs font-mono"
+                      className="px-4 py-2 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs font-mono"
                     >
                       Reset Filters
                     </button>

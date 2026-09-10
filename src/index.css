@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@layer base {
+  html, body {
+    background-color: #000000;
+    color: #f3f4f6;
+    color-scheme: dark;
+  }
+}
+
+/* Custom crisp dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}

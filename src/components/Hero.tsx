@@ -35,17 +35,17 @@ export const Hero: React.FC<HeroProps> = ({ onViewPredictions, onViewPredictions
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-neutral-800/80 bg-neutral-950">
+    <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-neutral-900 bg-black">
       {/* Cinematic Football Stadium Night Lighting Overlay */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-25 mix-blend-screen bg-cover bg-center"
+        className="absolute inset-0 pointer-events-none opacity-20 mix-blend-screen bg-cover bg-center"
         style={{
-          backgroundImage: `radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.15), transparent 60%), radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.08), transparent 50%), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=2000&q=80')`,
+          backgroundImage: `radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.12), transparent 60%), radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05), transparent 50%), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=2000&q=80')`,
         }}
       />
 
       {/* Dark Gradient Grid & Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/60 via-neutral-950/90 to-neutral-950 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/95 to-black pointer-events-none" />
 
       {/* Pitch Lines Vector Accent */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full border border-neutral-800/40 pointer-events-none opacity-40 blur-[1px]" />
@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onViewPredictions, onViewPredictions
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Top Intelligence Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-xs font-medium text-neutral-300 mb-6 backdrop-blur-md shadow-inner">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black border border-neutral-800 text-xs font-medium text-neutral-300 mb-6 backdrop-blur-md shadow-inner">
           <span className="flex h-2 w-2 rounded-full bg-amber-400"></span>
           <span className="text-amber-300 font-semibold">Institutional Grade Analysis</span>
           <span className="text-neutral-600">|</span>
@@ -88,7 +88,7 @@ export const Hero: React.FC<HeroProps> = ({ onViewPredictions, onViewPredictions
           <button
             id="hero-cta-explore-vip"
             onClick={onExploreVip}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-neutral-900/90 hover:bg-neutral-850 border border-neutral-700/80 hover:border-amber-500/50 text-amber-300 hover:text-amber-200 font-semibold text-sm transition-all flex items-center justify-center gap-2 backdrop-blur-md"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-black hover:bg-neutral-900 border border-neutral-800 hover:border-amber-500/50 text-amber-300 hover:text-amber-200 font-semibold text-sm transition-all flex items-center justify-center gap-2 backdrop-blur-md"
           >
             <Crown className="w-4 h-4 text-amber-400" />
             Explore VIP
@@ -114,7 +114,7 @@ export const Hero: React.FC<HeroProps> = ({ onViewPredictions, onViewPredictions
 
         {/* Live Platform Stats Grid */}
         <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
-          <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/70 border border-neutral-800/80 backdrop-blur-md text-left">
+          <div className="p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800 text-left">
             <div className="flex items-center justify-between text-neutral-400 text-xs font-medium mb-1">
               <span>Today's Predictions</span>
               <Target className="w-4 h-4 text-emerald-400" />
@@ -125,7 +125,7 @@ export const Hero: React.FC<HeroProps> = ({ onViewPredictions, onViewPredictions
             <p className="text-[11px] text-neutral-500 mt-1 font-mono">Curated Daily Dossiers</p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/70 border border-neutral-800/80 backdrop-blur-md text-left">
+          <div className="p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800 text-left">
             <div className="flex items-center justify-between text-neutral-400 text-xs font-medium mb-1">
               <span>Active Members</span>
               <Shield className="w-4 h-4 text-blue-400" />
@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onViewPredictions, onViewPredictions
             <p className="text-[11px] text-neutral-500 mt-1 font-mono">Global Sports Analysts</p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/70 border border-neutral-800/80 backdrop-blur-md text-left">
+          <div className="p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800 text-left">
             <div className="flex items-center justify-between text-neutral-400 text-xs font-medium mb-1">
               <span>VIP Members</span>
               <Crown className="w-4 h-4 text-amber-400" />
@@ -147,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({ onViewPredictions, onViewPredictions
             <p className="text-[11px] text-neutral-500 mt-1 font-mono">All-Inclusive Passholders</p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/70 border border-neutral-800/80 backdrop-blur-md text-left">
+          <div className="p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800 text-left">
             <div className="flex items-center justify-between text-neutral-400 text-xs font-medium mb-1">
               <span>Performance</span>
               <Sparkles className="w-4 h-4 text-amber-400" />

@@ -225,11 +225,11 @@ export const AdminDashboard: React.FC = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-neutral-800/80 mt-6 pb-2 font-mono text-xs">
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-neutral-800 mt-6 pb-2 font-mono text-xs">
         <button
           onClick={() => setActiveTab('analytics')}
           className={`px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-            activeTab === 'analytics' ? 'bg-neutral-800 text-white font-bold' : 'text-neutral-400 hover:bg-neutral-900'
+            activeTab === 'analytics' ? 'bg-neutral-900 text-white font-bold border border-neutral-800' : 'text-neutral-400 hover:bg-neutral-900'
           }`}
         >
           <TrendingUp className="w-3.5 h-3.5" /> Analytics Overview
@@ -238,7 +238,7 @@ export const AdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab('predictions')}
           className={`px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-            activeTab === 'predictions' ? 'bg-neutral-800 text-white font-bold' : 'text-neutral-400 hover:bg-neutral-900'
+            activeTab === 'predictions' ? 'bg-neutral-900 text-white font-bold border border-neutral-800' : 'text-neutral-400 hover:bg-neutral-900'
           }`}
         >
           <Layers className="w-3.5 h-3.5" /> Predictions ({predictions.length})
@@ -247,7 +247,7 @@ export const AdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab('users')}
           className={`px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-            activeTab === 'users' ? 'bg-neutral-800 text-white font-bold' : 'text-neutral-400 hover:bg-neutral-900'
+            activeTab === 'users' ? 'bg-neutral-900 text-white font-bold border border-neutral-800' : 'text-neutral-400 hover:bg-neutral-900'
           }`}
         >
           <Users className="w-3.5 h-3.5" /> Members ({usersList.length})
@@ -256,7 +256,7 @@ export const AdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab('payments')}
           className={`px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-            activeTab === 'payments' ? 'bg-neutral-800 text-white font-bold' : 'text-neutral-400 hover:bg-neutral-900'
+            activeTab === 'payments' ? 'bg-neutral-900 text-white font-bold border border-neutral-800' : 'text-neutral-400 hover:bg-neutral-900'
           }`}
         >
           <DollarSign className="w-3.5 h-3.5" /> Payments &amp; Revenue
@@ -265,7 +265,7 @@ export const AdminDashboard: React.FC = () => {
         <button
           onClick={() => setActiveTab('audit')}
           className={`px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-            activeTab === 'audit' ? 'bg-neutral-800 text-white font-bold' : 'text-neutral-400 hover:bg-neutral-900'
+            activeTab === 'audit' ? 'bg-neutral-900 text-white font-bold border border-neutral-800' : 'text-neutral-400 hover:bg-neutral-900'
           }`}
         >
           <ShieldCheck className="w-3.5 h-3.5" /> Audit Logs
@@ -278,19 +278,19 @@ export const AdminDashboard: React.FC = () => {
         {activeTab === 'analytics' && analytics && (
           <div className="space-y-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="p-5 rounded-2xl bg-neutral-900/90 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] font-mono uppercase text-neutral-400 block mb-1">Total Users</span>
                 <div className="text-3xl font-extrabold text-white font-mono">{analytics.totalUsers}</div>
                 <p className="text-[11px] text-emerald-400 font-mono mt-1">+12% this week</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-neutral-900/90 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] font-mono uppercase text-neutral-400 block mb-1">VIP Elite Members</span>
                 <div className="text-3xl font-extrabold text-amber-300 font-mono">{analytics.vipSubscribers}</div>
                 <p className="text-[11px] text-amber-400/90 font-mono mt-1">High retention</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-neutral-900/90 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] font-mono uppercase text-neutral-400 block mb-1">Total Revenue</span>
                 <div className="text-3xl font-extrabold text-emerald-400 font-mono">
                   {analytics.totalRevenue?.toLocaleString()} <span className="text-xs font-sans text-neutral-400">XAF</span>
@@ -298,7 +298,7 @@ export const AdminDashboard: React.FC = () => {
                 <p className="text-[11px] text-neutral-400 font-mono mt-1">Processed via Fapshi</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-neutral-900/90 border border-neutral-800">
+              <div className="p-5 rounded-2xl bg-black border border-neutral-800">
                 <span className="text-[11px] font-mono uppercase text-neutral-400 block mb-1">Single Ticket Sales</span>
                 <div className="text-3xl font-extrabold text-purple-400 font-mono">{analytics.predictionPurchases}</div>
                 <p className="text-[11px] text-neutral-400 font-mono mt-1">Pay-per-view volume</p>
@@ -306,13 +306,13 @@ export const AdminDashboard: React.FC = () => {
             </div>
 
             {/* Recent Payments Quick Overview */}
-            <div className="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-4">
+            <div className="p-6 rounded-2xl bg-black border border-neutral-800 space-y-4">
               <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
                 Recent Fapshi Transactions
               </h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs font-mono">
-                  <thead className="text-neutral-500 border-b border-neutral-800 text-[10px] uppercase">
+                  <thead className="text-neutral-500 border-b border-neutral-800 text-[10px] uppercase bg-black">
                     <tr>
                       <th className="pb-2">Reference</th>
                       <th className="pb-2">User Email</th>
@@ -322,7 +322,7 @@ export const AdminDashboard: React.FC = () => {
                       <th className="pb-2">Date</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-neutral-800">
+                  <tbody className="divide-y divide-neutral-800 bg-black">
                     {analytics.recentPayments?.map((p: any) => (
                       <tr key={p.id}>
                         <td className="py-2.5 text-amber-300">{p.reference}</td>
@@ -347,9 +347,9 @@ export const AdminDashboard: React.FC = () => {
         {/* PREDICTIONS TAB */}
         {activeTab === 'predictions' && (
           <div className="space-y-4">
-            <div className="overflow-x-auto rounded-2xl border border-neutral-800">
+            <div className="overflow-x-auto rounded-2xl border border-neutral-800 bg-black">
               <table className="w-full text-left text-xs font-mono">
-                <thead className="bg-neutral-950 text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
+                <thead className="bg-black text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
                   <tr>
                     <th className="p-3.5">ID</th>
                     <th className="p-3.5">Title</th>
@@ -362,9 +362,9 @@ export const AdminDashboard: React.FC = () => {
                     <th className="p-3.5 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-800 bg-neutral-900/60">
+                <tbody className="divide-y divide-neutral-800 bg-black">
                   {predictions.map((p) => (
-                    <tr key={p.id} className="hover:bg-neutral-850 transition-colors">
+                    <tr key={p.id} className="hover:bg-neutral-900 transition-colors">
                       <td className="p-3.5 text-neutral-500">#{p.id}</td>
                       <td className="p-3.5 text-white font-bold">{p.title}</td>
                       <td className="p-3.5">
@@ -387,7 +387,7 @@ export const AdminDashboard: React.FC = () => {
                         <select
                           value={p.status}
                           onChange={(e) => handleUpdateStatus(p.id, e.target.value)}
-                          className="bg-neutral-950 text-neutral-200 border border-neutral-700 rounded px-2 py-1 text-xs"
+                          className="bg-black text-neutral-200 border border-neutral-800 rounded px-2 py-1 text-xs"
                         >
                           <option value="upcoming">Upcoming</option>
                           <option value="in_progress">In Progress</option>
@@ -417,9 +417,9 @@ export const AdminDashboard: React.FC = () => {
         {/* USERS TAB */}
         {activeTab === 'users' && (
           <div className="space-y-4">
-            <div className="overflow-x-auto rounded-2xl border border-neutral-800">
+            <div className="overflow-x-auto rounded-2xl border border-neutral-800 bg-black">
               <table className="w-full text-left text-xs font-mono">
-                <thead className="bg-neutral-950 text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
+                <thead className="bg-black text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
                   <tr>
                     <th className="p-3.5">User</th>
                     <th className="p-3.5">Role</th>
@@ -430,15 +430,15 @@ export const AdminDashboard: React.FC = () => {
                     <th className="p-3.5 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-800 bg-neutral-900/60">
+                <tbody className="divide-y divide-neutral-800 bg-black">
                   {usersList.map((u) => (
-                    <tr key={u.id} className="hover:bg-neutral-850 transition-colors">
+                    <tr key={u.id} className="hover:bg-neutral-900 transition-colors">
                       <td className="p-3.5">
                         <div className="font-bold text-white">{u.displayName || 'Unnamed Analyst'}</div>
                         <div className="text-[11px] text-neutral-400">{u.email}</div>
                       </td>
                       <td className="p-3.5">
-                        <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-neutral-800 text-neutral-300">
+                        <span className="px-2 py-0.5 rounded text-[10px] uppercase font-bold bg-neutral-900 border border-neutral-800 text-neutral-300">
                           {u.role}
                         </span>
                       </td>
@@ -446,8 +446,8 @@ export const AdminDashboard: React.FC = () => {
                         <span
                           className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                             u.status === 'active'
-                              ? 'bg-emerald-500/10 text-emerald-400'
-                              : 'bg-red-500/10 text-red-400'
+                              ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
+                              : 'bg-red-500/10 text-red-400 border border-red-500/30'
                           }`}
                         >
                           {u.status}
@@ -468,8 +468,8 @@ export const AdminDashboard: React.FC = () => {
                           onClick={() => handleToggleUserStatus(u.id, u.status)}
                           className={`px-2 py-1 rounded text-[10px] font-bold ${
                             u.status === 'active'
-                              ? 'bg-red-500/10 text-red-400 hover:bg-red-500/20'
-                              : 'bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20'
+                              ? 'bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/30'
+                              : 'bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 border border-emerald-500/30'
                           }`}
                         >
                           {u.status === 'active' ? 'Suspend' : 'Restore'}
@@ -486,9 +486,9 @@ export const AdminDashboard: React.FC = () => {
         {/* PAYMENTS TAB */}
         {activeTab === 'payments' && (
           <div className="space-y-4">
-            <div className="overflow-x-auto rounded-2xl border border-neutral-800">
+            <div className="overflow-x-auto rounded-2xl border border-neutral-800 bg-black">
               <table className="w-full text-left text-xs font-mono">
-                <thead className="bg-neutral-950 text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
+                <thead className="bg-black text-neutral-400 border-b border-neutral-800 text-[11px] uppercase">
                   <tr>
                     <th className="p-3.5">Reference</th>
                     <th className="p-3.5">Payer Email</th>
@@ -499,16 +499,16 @@ export const AdminDashboard: React.FC = () => {
                     <th className="p-3.5">Date</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-800 bg-neutral-900/60">
+                <tbody className="divide-y divide-neutral-800 bg-black">
                   {paymentsList.map((p) => (
-                    <tr key={p.id}>
+                    <tr key={p.id} className="hover:bg-neutral-900 transition-colors">
                       <td className="p-3.5 text-amber-300 font-bold">{p.reference}</td>
                       <td className="p-3.5 text-white">{p.userEmail || 'Guest'}</td>
                       <td className="p-3.5 text-emerald-400 font-bold">{p.amount.toLocaleString()} {p.currency}</td>
                       <td className="p-3.5 uppercase">{p.provider}</td>
                       <td className="p-3.5 text-neutral-500">{p.providerTransId || '—'}</td>
                       <td className="p-3.5">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
                           {p.status}
                         </span>
                       </td>
@@ -524,13 +524,13 @@ export const AdminDashboard: React.FC = () => {
         {/* AUDIT TAB */}
         {activeTab === 'audit' && (
           <div className="space-y-4">
-            <div className="p-5 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-3 font-mono text-xs">
+            <div className="p-5 rounded-2xl bg-black border border-neutral-800 space-y-3 font-mono text-xs">
               <h3 className="text-sm font-bold text-white uppercase tracking-wider">System Audit Trail</h3>
               <div className="divide-y divide-neutral-800">
                 {auditLogs.map((log) => (
                   <div key={log.id} className="py-2.5 flex items-start justify-between gap-4">
                     <div>
-                      <span className="px-2 py-0.5 rounded bg-neutral-800 text-amber-400 font-bold mr-2 text-[10px]">
+                      <span className="px-2 py-0.5 rounded bg-neutral-900 border border-neutral-800 text-amber-400 font-bold mr-2 text-[10px]">
                         {log.action}
                       </span>
                       <span className="text-neutral-300">{log.details}</span>
@@ -548,9 +548,9 @@ export const AdminDashboard: React.FC = () => {
 
       {/* CREATE PREDICTION MODAL */}
       {showCreateModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/80 backdrop-blur-md overflow-y-auto">
-          <div className="relative w-full max-w-2xl my-8 bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl p-6 space-y-6 max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between border-b border-neutral-800 pb-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+          <div className="relative w-full max-w-2xl my-8 bg-black border border-neutral-800 rounded-2xl shadow-2xl p-6 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between border-b border-neutral-900 pb-4">
               <h3 className="text-lg font-bold text-white">Create Prediction Package</h3>
               <button
                 onClick={() => setShowCreateModal(false)}

@@ -78,10 +78,10 @@ export const PredictionDetailModal: React.FC<PredictionDetailModalProps> = ({ pa
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-neutral-950/80 backdrop-blur-md overflow-y-auto animate-in fade-in">
-      <div className="relative w-full max-w-3xl my-8 bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-in fade-in">
+      <div className="relative w-full max-w-3xl my-8 bg-black border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
         {/* Modal Top Header */}
-        <div className="flex items-center justify-between p-5 border-b border-neutral-800 bg-neutral-950/90">
+        <div className="flex items-center justify-between p-5 border-b border-neutral-900 bg-black">
           <div className="flex items-center gap-2.5">
             <div className={`p-2 rounded-lg ${hasAccess ? 'bg-emerald-500/10 text-emerald-400' : 'bg-amber-500/10 text-amber-400'}`}>
               {hasAccess ? <Unlock className="w-5 h-5" /> : <Lock className="w-5 h-5" />}
@@ -133,7 +133,7 @@ export const PredictionDetailModal: React.FC<PredictionDetailModalProps> = ({ pa
 
               {/* Package Snapshot */}
               {pkg && (
-                <div className="max-w-md mx-auto p-4 rounded-xl bg-neutral-950/80 border border-neutral-800 text-left space-y-2 font-mono text-xs">
+                <div className="max-w-md mx-auto p-4 rounded-xl bg-black border border-neutral-800 text-left space-y-2 font-mono text-xs">
                   <div className="flex justify-between text-neutral-400">
                     <span>Category:</span>
                     <span className="text-white font-semibold">{pkg.category}</span>
@@ -175,7 +175,7 @@ export const PredictionDetailModal: React.FC<PredictionDetailModalProps> = ({ pa
                 <button
                   id="cancel-modal-btn"
                   onClick={onClose}
-                  className="w-full sm:w-auto px-5 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-300 font-medium text-sm transition-colors"
+                  className="w-full sm:w-auto px-5 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-300 font-medium text-sm transition-colors border border-neutral-800"
                 >
                   Return to Dashboard
                 </button>
@@ -194,7 +194,7 @@ export const PredictionDetailModal: React.FC<PredictionDetailModalProps> = ({ pa
                   <button
                     id="copy-slip-btn"
                     onClick={copySlip}
-                    className="flex items-center gap-1 px-2.5 py-1 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-mono transition-colors"
+                    className="flex items-center gap-1 px-2.5 py-1 rounded bg-black hover:bg-neutral-900 border border-neutral-800 text-neutral-200 text-xs font-mono transition-colors"
                   >
                     {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copied ? 'Slip Copied!' : 'Copy Slip'}</span>
@@ -211,7 +211,7 @@ export const PredictionDetailModal: React.FC<PredictionDetailModalProps> = ({ pa
                 {matches.map((m, idx) => (
                   <div
                     key={m.id || idx}
-                    className="p-4 rounded-xl bg-neutral-950/70 border border-neutral-800/80 hover:border-neutral-700 transition-colors space-y-3"
+                    className="p-4 rounded-xl bg-black border border-neutral-800 hover:border-neutral-700 transition-colors space-y-3"
                   >
                     {/* League & Kickoff */}
                     <div className="flex items-center justify-between text-xs text-neutral-400 font-mono">
@@ -238,7 +238,7 @@ export const PredictionDetailModal: React.FC<PredictionDetailModalProps> = ({ pa
                     </div>
 
                     {/* Market & Recommended Selection */}
-                    <div className="p-3 rounded-lg bg-neutral-900/90 border border-neutral-800/90 flex flex-wrap items-center justify-between gap-2">
+                    <div className="p-3 rounded-lg bg-black border border-neutral-800 flex flex-wrap items-center justify-between gap-2">
                       <div>
                         <span className="text-[10px] uppercase font-mono text-neutral-500 block">Target Market</span>
                         <span className="text-xs font-semibold text-neutral-300">{m.market}</span>
@@ -253,7 +253,7 @@ export const PredictionDetailModal: React.FC<PredictionDetailModalProps> = ({ pa
 
                     {/* Tactical Analysis Dossier */}
                     {m.analysis && (
-                      <div className="text-xs text-neutral-400 bg-neutral-900/40 p-3 rounded-lg border border-neutral-800/50 leading-relaxed font-normal">
+                      <div className="text-xs text-neutral-400 bg-black p-3 rounded-lg border border-neutral-800 leading-relaxed font-normal">
                         <span className="font-semibold text-neutral-300 font-mono block mb-1">
                           Tactical Intelligence &amp; Form Note:
                         </span>

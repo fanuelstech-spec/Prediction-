@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: apexpicks-pro
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: apexpicks-postgres
+          property: connectionString
+      - key: FAPSHI_API_USER
+        sync: false
+      - key: FAPSHI_API_KEY
+        sync: false
+      - key: FAPSHI_BASE_URL
+        value: https://live.fapshi.com
+      - key: VITE_FIREBASE_API_KEY
+        sync: false
+      - key: VITE_FIREBASE_PROJECT_ID
+        value: winter-kayak-ksjh2
+      - key: VITE_FIREBASE_APP_ID
+        value: 1:109017269012:web:d087e2ee94e439fb183801
+      - key: VITE_FIREBASE_AUTH_DOMAIN
+        value: winter-kayak-ksjh2.firebaseapp.com
+
+databases:
+  - name: apexpicks-postgres
+    databaseName: apexpicks
+    user: apexpicks_admin
+    plan: free

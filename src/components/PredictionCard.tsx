@@ -63,8 +63,8 @@ export const PredictionCard: React.FC<PredictionCardProps> = ({ pkg, onView, onU
       id={`prediction-card-${pkg.id}`}
       className={`group relative rounded-2xl transition-all duration-200 flex flex-col justify-between overflow-hidden border ${
         isVip
-          ? 'bg-gradient-to-b from-neutral-900/90 via-neutral-900/80 to-neutral-950 border-amber-500/30 hover:border-amber-500/60 shadow-lg shadow-amber-500/5'
-          : 'bg-gradient-to-b from-neutral-900/80 to-neutral-950/90 border-neutral-800 hover:border-neutral-700'
+          ? 'bg-black border-amber-500/30 hover:border-amber-500/60 shadow-lg shadow-amber-500/5'
+          : 'bg-black border-neutral-800 hover:border-neutral-700'
       }`}
     >
       {/* Header Bar */}
@@ -95,7 +95,7 @@ export const PredictionCard: React.FC<PredictionCardProps> = ({ pkg, onView, onU
         </div>
 
         {/* Odds & Matches Key Metrics Bar */}
-        <div className="mt-4 grid grid-cols-2 gap-2 p-3 rounded-xl bg-neutral-950/80 border border-neutral-800/80">
+        <div className="mt-4 grid grid-cols-2 gap-2 p-3 rounded-xl bg-black border border-neutral-800">
           <div>
             <span className="text-[10px] uppercase font-mono text-neutral-500 block">Selections</span>
             <span className="text-base font-extrabold text-white font-mono">
@@ -112,7 +112,7 @@ export const PredictionCard: React.FC<PredictionCardProps> = ({ pkg, onView, onU
       </div>
 
       {/* Locked Match Preview Teaser or Unlocked Teaser */}
-      <div className="px-5 py-3 border-t border-neutral-800/60 bg-neutral-950/40">
+      <div className="px-5 py-3 border-t border-neutral-900 bg-black">
         {hasAccess ? (
           <div className="flex items-center justify-between text-xs py-1">
             <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold font-mono">
@@ -130,7 +130,7 @@ export const PredictionCard: React.FC<PredictionCardProps> = ({ pkg, onView, onU
             </div>
 
             {/* Frosted obscured row previews */}
-            <div className="relative rounded-lg overflow-hidden border border-neutral-800/50 bg-neutral-900/40 p-2.5 text-xs text-neutral-500 font-mono space-y-1">
+            <div className="relative rounded-lg overflow-hidden border border-neutral-800 bg-black p-2.5 text-xs text-neutral-500 font-mono space-y-1">
               <div className="flex items-center justify-between opacity-60 filter blur-[0.5px]">
                 <span>Match 1: Marquee Fixture</span>
                 <span className="text-neutral-600">Odds: 🔒.🔒🔒</span>
@@ -139,8 +139,8 @@ export const PredictionCard: React.FC<PredictionCardProps> = ({ pkg, onView, onU
                 <span>Match 2: Primetime League Clash</span>
                 <span className="text-neutral-600">Odds: 🔒.🔒🔒</span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/40 to-transparent flex items-center justify-center">
-                <span className="text-[11px] font-semibold text-neutral-300 bg-neutral-900/90 px-2.5 py-0.5 rounded-full border border-neutral-700 shadow-sm flex items-center gap-1">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent flex items-center justify-center">
+                <span className="text-[11px] font-semibold text-neutral-300 bg-black px-2.5 py-0.5 rounded-full border border-neutral-700 shadow-sm flex items-center gap-1">
                   <Lock className="w-3 h-3 text-amber-400" /> Access Required to Reveal
                 </span>
               </div>
@@ -150,7 +150,7 @@ export const PredictionCard: React.FC<PredictionCardProps> = ({ pkg, onView, onU
       </div>
 
       {/* Action CTA Button */}
-      <div className="p-5 pt-3">
+      <div className="p-5 pt-3 bg-black">
         {hasAccess ? (
           <button
             id={`btn-view-prediction-${pkg.id}`}
@@ -169,7 +169,7 @@ export const PredictionCard: React.FC<PredictionCardProps> = ({ pkg, onView, onU
               className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs tracking-wide transition-all flex items-center justify-center gap-1.5 ${
                 isVip
                   ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 shadow-md shadow-amber-500/20'
-                  : 'bg-neutral-850 hover:bg-neutral-800 text-white border border-neutral-700'
+                  : 'bg-neutral-900 hover:bg-neutral-800 text-white border border-neutral-800'
               }`}
             >
               <Lock className="w-3.5 h-3.5" />

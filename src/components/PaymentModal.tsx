@@ -109,10 +109,10 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ target, onClose, onS
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/80 backdrop-blur-md animate-in fade-in">
-      <div className="relative w-full max-w-md bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in">
+      <div className="relative w-full max-w-md bg-black border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-5 border-b border-neutral-800 bg-neutral-950/80">
+        <div className="flex items-center justify-between p-5 border-b border-neutral-900 bg-black">
           <div className="flex items-center gap-2">
             <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400">
               <Shield className="w-4 h-4" />
@@ -134,7 +134,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ target, onClose, onS
         {/* Content */}
         <div className="p-6 space-y-6">
           {/* Item Details Summary */}
-          <div className="p-4 rounded-xl bg-neutral-950/90 border border-neutral-800 space-y-3">
+          <div className="p-4 rounded-xl bg-black border border-neutral-800 space-y-3">
             <div className="flex items-center justify-between text-xs">
               <span className="text-neutral-400">Product / Package:</span>
               <span className="text-white font-bold text-right">{target.name}</span>
@@ -205,7 +205,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ target, onClose, onS
 
               {isMock ? (
                 // Sandbox Simulation Mode (Allows instant verification & testing in the preview)
-                <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-3">
+                <div className="p-4 rounded-xl bg-black border border-neutral-800 space-y-3">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-400">
                     <Sparkles className="w-4 h-4" />
                     <span>Fapshi Sandbox Test Environment</span>
