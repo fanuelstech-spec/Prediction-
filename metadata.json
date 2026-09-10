@@ -1,0 +1,6 @@
+{
+  "name": "ApexPicks - Premium Football Predictions & Analytics",
+  "description": "Production-ready football predictions platform with premium accumulators, VIP memberships, pay-per-prediction unlocks, and secure Fapshi payment integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
